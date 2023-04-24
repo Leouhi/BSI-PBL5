@@ -1,0 +1,6 @@
+public class ContaPoupanca extends Conta {
+    public void mostrarSaldo() {
+        float saldoComRendimento = getSaldo() * 1.005f;
+        System.out.println("Saldo com rendimento: R$" + saldoComRendimento);
+    }
+}
