@@ -1,0 +1,36 @@
+public class Main {
+    public static void main(String[] args) {
+        Veiculo veiculo1 = new Carro();
+        Veiculo veiculo2 = new Moto();
+        Veiculo veiculo3 = new Veiculo();
+
+        Animal animal1 = new Cachorro();
+        Animal animal2 = new Gato();
+
+        animal1.fazerBarulho();
+        animal2.fazerBarulho();
+
+        veiculo1.acelerar();
+        veiculo2.acelerar();
+        veiculo3.acelerar();
+
+        ContaCorrente cc = new ContaCorrente();
+        cc.depositar(1000.0f);
+        System.out.println("Saldo inicial conta corrente: R$" + cc.getSaldo());
+
+        ContaPoupanca cp = new ContaPoupanca();
+        cp.depositar(2000.0f);
+        System.out.println("Saldo inicial conta poupança: R$" + cp.getSaldo());
+
+        Pessoa pessoa1 = new Pessoa(cc);
+        pessoa1.depositar(500.0f);
+        System.out.println("Novo saldo da conta corrente: R$" + cc.getSaldo());
+
+        Pessoa pessoa2 = new Pessoa(cp);
+        pessoa2.depositar(1000.0f);
+        System.out.println("Novo saldo da conta poupança: R$" + cp.getSaldo());
+
+        System.out.println("Saldo com rendimento da conta poupança:");
+        pessoa2.getConta().mostrarSaldo();
+    }
+}
